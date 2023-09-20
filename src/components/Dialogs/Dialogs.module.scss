@@ -1,0 +1,31 @@
+.dialogs__wrapper{
+  color: #ffffff;
+  background: #e97383;
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+.dialogs{
+  border-right: 1px solid #ffffff9a;
+  padding-left: 10px;
+  padding-top: 15px;
+}
+.dialog{
+  padding: 10px 0;
+  &.active{
+    color: #f1c2c2;
+  }
+}
+.messages{
+  flex: 1;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+.message{
+  padding: 15px 0;
+}
+.activeLink{
+  color: #24ee09;
+}
+a{
+  color: #ffffff;
+}

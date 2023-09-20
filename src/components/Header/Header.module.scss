@@ -1,0 +1,9 @@
+.header{
+  display: grid;
+  align-items: center;
+  background: #bdf1c8;
+  grid-area: h;
+  .logo{
+    height: 50px;
+  }
+}

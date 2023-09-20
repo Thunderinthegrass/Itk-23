@@ -1,0 +1,18 @@
+.nav{
+  background: #7dc3ec;
+  grid-area: n;
+  a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: .3s;
+  }
+  &List{
+    list-style: none;
+  }
+  .activeLink{
+    color: #f13737;
+  }
+}
+.navItem{
+  padding: 3px 0;
+}

@@ -1,0 +1,12 @@
+.container{
+  display: grid;
+  grid-template-areas: "h h " "n c ";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  height: 100vh;
+  color: #ffffff;
+}
