@@ -1,29 +1,38 @@
+import React from 'react';
 import cl from './MyPosts.module.scss';
 import Post from './Post/Post';
 
-let postsData = [
-  {id: 1, post: 'Первый пост', likesCount: 10},
-  {id: 2, post: 'Вторый пост', likesCount: 15},
-  {id: 3, post: 'Третый пост', likesCount: 17},
-  {id: 4, post: 'Четвертый пост', likesCount: 19},
-]
-
 const MyPosts = (props) => {
+
+  let post = props.posts.map(post => <Post message={post.post} likesCount={post.likesCount} />)
+
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    props.addPost()
+    // props.updatePostText('');
+    newPostElement.current.value = '';
+  };
+
+  let updateText = () => {
+    let text = newPostElement.current.value;
+    props.updatePostText(text);
+  }
+
   return (
     <div>
       <div className={cl.myPosts}>
-        <h3>{props.title}</h3>
-        <div className="addPost">
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <button>{props.addBtn}</button>
-          <button>{props.removeBtn}</button>
+        <h3>Мои посты</h3>
+        <div className={cl.addPost}>
+          <textarea ref={newPostElement} onChange={ updateText } value={props.newPostText} />
+          <div className={cl.buttons}>
+            <button onClick={ addPost } >Добавить пост</button>
+            <button>Удалить пост</button>
+          </div>
         </div>
       </div>
       <div className="posts">
-        <Post massage={postsData[0].post} likesCount={postsData[0].likesCount} />
-        <Post massage={postsData[1].post} likesCount={postsData[1].likesCount} />
-        <Post massage={postsData[2].post} likesCount={postsData[2].likesCount} />
-        <Post massage={postsData[3].post} likesCount={postsData[3].likesCount} />
+        {post}
       </div>
     </div>
   )
