@@ -3,6 +3,7 @@ import cl from './MyPosts.module.scss';
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
+  console.log(props)
 
   let post = props.posts.map(post => <Post message={post.post} likesCount={post.likesCount} />)
 
@@ -10,7 +11,6 @@ const MyPosts = (props) => {
 
   let addPost = () => {
     props.addPost()
-    // props.updatePostText('');
     newPostElement.current.value = '';
   };
 
@@ -26,7 +26,7 @@ const MyPosts = (props) => {
         <div className={cl.addPost}>
           <textarea ref={newPostElement} onChange={ updateText } value={props.newPostText} />
           <div className={cl.buttons}>
-            <button onClick={ addPost } >Добавить пост</button>
+            <button onClick={addPost} >Добавить пост</button>
             <button>Удалить пост</button>
           </div>
         </div>

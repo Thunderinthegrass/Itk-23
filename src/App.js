@@ -16,7 +16,10 @@ const App = (props) => {
       <Header />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updatePostText={props.updatePostText} />} />
+        <Route 
+          path="/" 
+          element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updatePostText={props.updatePostText} />} 
+        />
         <Route
           path="profile/"
           element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updatePostText={props.updatePostText} />}
