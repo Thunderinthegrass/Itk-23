@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import cl from "./NavbarItem.module.scss";
 
 const NavbarItem = (props) => {
-  console.log(props)
   return (
     <li className={cl.navItem}>
       <NavLink
