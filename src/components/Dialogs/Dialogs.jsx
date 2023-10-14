@@ -2,6 +2,7 @@ import React from 'react';
 import DialogItem from './DialogItem/DialogItem';
 import cl from './Dialogs.module.scss';
 import Message from './Message/Message';
+import { sendMessageActionCreator, updateMessageTextActionCreator } from '../../redux/state';
 
 const Dialogs = (props) => {
   
@@ -11,9 +12,14 @@ const Dialogs = (props) => {
 
   let newMessageElement = React.createRef();
 
-  let newMessage = () => {
-    let text = newMessageElement.current.value;
-    alert(text);
+  let sendMessage = () => {
+    props.dispatch(sendMessageActionCreator())
+    newMessageElement.current.value = '';
+  }
+
+  const updateMessageText = (e) => {
+    let text = e.target.value;
+    props.dispatch(updateMessageTextActionCreator(text));
   }
   // #408FDC
   return (
@@ -22,11 +28,13 @@ const Dialogs = (props) => {
         {dialogsElements}
       </div>
       <div className={cl.messages}>
-        {messageElements}
-        <textarea name="" id="" cols="30" rows="10" ref={newMessageElement}>
+        <div className={cl.messagesWrapper}>
+          {messageElements}
+        </div>
+        <textarea plaseholder='Введите сообщение' value={props.newMessageText} className={cl.textarea} onChange={updateMessageText} ref={newMessageElement}>
 
         </textarea>
-        <button onClick={newMessage} >Отправить сообщение</button>
+        <button onClick={sendMessage} >Отправить сообщение</button>
       </div>
     </div>
   )

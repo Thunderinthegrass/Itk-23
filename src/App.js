@@ -14,7 +14,7 @@ const App = (props) => {
   return (
     <div className="container">
       <Header />
-      <Navbar />
+      <Navbar navbar={props.state.navBar} />
       <Routes>
         <Route 
           path="/" 
@@ -22,11 +22,11 @@ const App = (props) => {
         />
         <Route
           path="profile/"
-          element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updatePostText={props.updatePostText} />}
+          element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />}
         />
         <Route
           path="dialogs/*"
-          element={<Dialogs dialogs={props.state.dialogsPage} />}
+          element={<Dialogs dialogs={props.state.dialogsPage} dispatch={props.dispatch} />}
         />
         <Route path="news/" element={<News />} />
         <Route path="music/" element={<Music />} />

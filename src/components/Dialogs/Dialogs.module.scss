@@ -13,6 +13,12 @@
   flex: 1;
   padding-left: 15px;
   padding-top: 15px;
+  &Wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
 }
 .message{
   padding: 15px 0;
@@ -22,4 +28,10 @@
 }
 a{
   color: #ffffff;
+}
+.textarea{
+  margin-bottom: 30px;
+  &::placeholder{
+    color: #000;
+  }
 }
