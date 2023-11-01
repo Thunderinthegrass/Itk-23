@@ -10,19 +10,20 @@ import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
 
 const App = (props) => {
+  // debugger;
   // console.log(props)
   return (
     <div className="container">
       <Header />
-      <Navbar navbar={props.state.navBar} />
+      <Navbar navbar={props.state.navbar} />
       <Routes>
         <Route 
           path="/" 
-          element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} 
+          element={<Profile store={props.store} />} 
         />
         <Route
           path="profile/"
-          element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />}
+          element={<Profile store={props.store} />}
         />
         <Route
           path="dialogs/*"

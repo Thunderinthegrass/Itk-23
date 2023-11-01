@@ -7,7 +7,23 @@ export const updateMessageTextActionCreator = (text) => ({
   text: text,
 });
 
-const dialogsReducer = (state, action) => {
+let initialState = {
+  dialogs: [
+    { id: 1, name: "Владимир" },
+    { id: 2, name: "Фёдор" },
+    { id: 3, name: "Селиван" },
+    { id: 4, name: "Дед Вовка" },
+  ],
+  messages: [
+    { id: 1, message: "Первое сообщение" },
+    { id: 2, message: "Второе сообщение" },
+    { id: 3, message: "Третье сообщение" },
+    { id: 4, message: "Четвертое сообщение" },
+  ],
+  newMessageText: "Сообщение",
+}
+
+const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEND_MESSAGE:
       let id = state.messages.length;
