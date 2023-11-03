@@ -15,19 +15,19 @@ const App = (props) => {
   return (
     <div className="container">
       <Header />
-      <Navbar navbar={props.state.navbar} />
+      <Navbar state={props.state} />
       <Routes>
         <Route 
           path="/" 
-          element={<Profile store={props.store} />} 
+          element={<Profile />} 
         />
         <Route
           path="profile/"
-          element={<Profile store={props.store} />}
+          element={<Profile />}
         />
         <Route
           path="dialogs/*"
-          element={<DialogsContainer store={props.store} />}
+          element={<DialogsContainer />}
         />
         <Route path="news/" element={<News />} />
         <Route path="music/" element={<Music />} />
