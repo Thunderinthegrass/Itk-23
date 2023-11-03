@@ -2,24 +2,23 @@ import React from 'react';
 import DialogItem from './DialogItem/DialogItem';
 import cl from './Dialogs.module.scss';
 import Message from './Message/Message';
-import { sendMessageActionCreator, updateMessageTextActionCreator } from '../../redux/dialogs-reduser';
 
 const Dialogs = (props) => {
   
-  let dialogsElements = props.dialogs.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
+  let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
 
-  let messageElements = props.dialogs.messages.map(message => <Message message={message.message} id={message.id} />);
+  let messageElements = props.dialogsPage.messages.map(message => <Message message={message.message} id={message.id} />);
 
   let newMessageElement = React.createRef();
 
   let sendMessage = () => {
-    props.dispatch(sendMessageActionCreator())
+    props.sendMessage()
     newMessageElement.current.value = '';
   }
 
   const updateMessageText = (e) => {
     let text = e.target.value;
-    props.dispatch(updateMessageTextActionCreator(text));
+    props.updateMessageText(text);
   }
   // #408FDC
   return (
