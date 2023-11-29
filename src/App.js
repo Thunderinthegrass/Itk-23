@@ -1,13 +1,14 @@
 import "./App.scss";
 import {Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar";
+// import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import NavbarContainer from "./components/Navbar/NavbarContainer";
 
 const App = (props) => {
   // debugger;
@@ -15,7 +16,7 @@ const App = (props) => {
   return (
     <div className="container">
       <Header />
-      <Navbar state={props.state} />
+      <NavbarContainer />
       <Routes>
         <Route 
           path="/" 

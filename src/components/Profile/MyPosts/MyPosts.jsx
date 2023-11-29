@@ -11,11 +11,13 @@ const MyPosts = (props) => {
   let onAddPost = () => {
     newPostElement.current.value = '';
     props.addPost();
+    console.log(props.posts)
   };
 
   let onUpdateText = () => {
     let text = newPostElement.current.value;
     props.updateNewPostText(text);
+    console.log(props.newPostText)
   }
 
   return (

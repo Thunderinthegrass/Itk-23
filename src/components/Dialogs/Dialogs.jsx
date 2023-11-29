@@ -30,7 +30,7 @@ const Dialogs = (props) => {
         <div className={cl.messagesWrapper}>
           {messageElements}
         </div>
-        <textarea plaseholder='Введите сообщение' value={props.newMessageText} className={cl.textarea} onChange={updateMessageText} ref={newMessageElement}>
+        <textarea plaseholder='Введите сообщение' value={props.dialogsPage.newMessageText} className={cl.textarea} onChange={updateMessageText} ref={newMessageElement}>
 
         </textarea>
         <button onClick={sendMessage} >Отправить сообщение</button>
