@@ -1,3 +1,4 @@
+import React from 'react';
 import cl from './ProfileInfo.module.scss';
 
 const ProfileInfo = () => {

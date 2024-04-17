@@ -1,3 +1,4 @@
+import React from "react";
 import cl from "./Message.module.scss";
 
 const Message = (props) => {

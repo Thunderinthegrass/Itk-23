@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./Friends.module.scss";
 
 const Friends = () => {

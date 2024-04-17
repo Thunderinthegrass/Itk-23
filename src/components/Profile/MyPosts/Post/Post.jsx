@@ -1,3 +1,4 @@
+import React from "react";
 import cl from "./Post.module.scss";
 
 const Post = (props) => {

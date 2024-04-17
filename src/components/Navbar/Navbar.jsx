@@ -1,3 +1,4 @@
+import React from "react";
 import cl from "./Navbar.module.scss";
 import NavbarItem from "./NavbarItem/NavbarItem";
 

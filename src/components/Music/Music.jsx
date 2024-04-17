@@ -1,3 +1,4 @@
+import React from 'react';
 import cl from './Music.module.scss';
 
 const Music = () => {

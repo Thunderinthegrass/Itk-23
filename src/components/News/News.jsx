@@ -1,3 +1,4 @@
+import React from 'react';
 import cl from './News.module.scss';
 
 const News = () => {
